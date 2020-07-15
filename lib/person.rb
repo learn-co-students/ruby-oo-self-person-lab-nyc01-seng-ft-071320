@@ -1,8 +1,10 @@
 # your code goes here
+# require 'pry'
 
 class Person
     attr_reader :name
     attr_accessor :bank_account, :happiness, :hygiene
+    
     def initialize(name)
         @name = name
         @bank_account = 25
@@ -20,6 +22,7 @@ class Person
         @happiness = 0
       end
     end
+
     def hygiene
       if @hygiene > 10
         @hygiene = 10
@@ -31,5 +34,37 @@ class Person
       end
     end
 
+    def happy?
+        if @happiness > 7
+            return true
+        else 
+            false
+        end
+    end
 
+    def clean?
+        if @hygiene > 7
+            return true
+        else 
+            false
+        end
+    end
+
+    def get_paid(salary)
+        @bank_account += salary
+
+        # binding.pry
+        "all about the benjamins"
+    end
+
+    def take_bath
+        self.hygiene += 4
+        "♪ Rub-a-dub just relaxing in the tub ♫"
+    end
+
+    def work_out
+        self.happiness += 2
+        self.hygiene -= 3
+        "♪ another one bites the dust ♫"
+    end
 end
