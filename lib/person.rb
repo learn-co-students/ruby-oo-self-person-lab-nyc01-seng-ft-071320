@@ -14,7 +14,8 @@ class Person
 
     def happiness=(happiness)
         @happiness = happiness
-        @happiness = (0..10)
+        # happiness.include?  
+        # @happiness = (0..10).include?(happiness)
         # 0..10 happiness can't go below 0 or over 10
     end
 
