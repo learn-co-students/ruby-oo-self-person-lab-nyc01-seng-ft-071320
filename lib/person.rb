@@ -40,9 +40,20 @@ class Person
     end
 
     def take_bath
-        if @hygiene <= 6
-            @hygiene += 4
-            return "♪ Rub-a-dub just relaxing in the tub ♫"
-        end
+        self.hygiene=(@hygiene += 4)
+        return "♪ Rub-a-dub just relaxing in the tub ♫"
     end
+
+    def work_out
+        self.happiness=(@happiness += 2)
+        self.hygiene=(@hygiene -= 3)
+        return "♪ another one bites the dust ♫"
+    end
+
+    def call_friend(friend)
+        self.happiness=(@happiness += 3)
+        friend.happiness=(@happiness += 3)
+        return "Hi #{friend.name}! It's #{self.name}. How are you?"
+    end
+
 end
