@@ -7,7 +7,7 @@ class Person
         @name = name
 
     end
-
+#def methods
     def name
         @name
     end
