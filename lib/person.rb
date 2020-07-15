@@ -1,29 +1,21 @@
 class Person
 
-    attr_accessor :happiness, :hygiene, :bank_account
-    attr_reader :name
+    attr_accessor :bank_account
+    attr_reader :name, :happiness, :hygiene
     
-    def initialize(name, bank_account=25, happiness=8, hygiene=8)
+    def initialize(name)
         @name = name
-        @bank_account = bank_account
-        @happiness = happiness.between(0, 10)
-        @hygiene = hygiene.between(0, 10)
+        @bank_account = 25
+        @happiness = 8
+        @hygiene = 8
     end
 
-    def happiness
-        @happiness        
+    def happiness=(happiness)
+        @happiness = happiness.clamp(0, 10)
     end
 
-    def happiness=(num)
-        @happiness
-    end
-
-    def hygiene
-        @hygiene
-    end
-    
-    def hygiene=(num)
-        @hygiene
+    def hygiene=(hygiene)
+        @hygiene = hygiene.clamp(0, 10)
     end
 
     def clean?
@@ -39,6 +31,18 @@ class Person
             true
         else
             false
+        end
+    end
+
+    def get_paid(salary)
+        @bank_account += salary
+        "all about the benjamins"
+    end
+
+    def take_bath
+        if @hygiene <= 6
+            @hygiene += 4
+            return "♪ Rub-a-dub just relaxing in the tub ♫"
         end
     end
 end
