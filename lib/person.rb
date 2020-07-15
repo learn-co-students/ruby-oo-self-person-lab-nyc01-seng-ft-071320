@@ -35,6 +35,11 @@ class Person
         end
     end
 
+    def take_bath  
+        self.hygiene=(@hygiene + 4)
+        "♪ Rub-a-dub just relaxing in the tub ♫"
+        end 
+
     def happy?
         if @happiness > 7
             true
@@ -57,6 +62,14 @@ class Person
             "all about the benjamins"
         end
     end
+
+    def work_out 
+    self.hygiene=(@hygiene -3)
+    self.happiness=(@happiness+2)
+    "♪ another one bites the dust ♫"
+    end 
+
+
 end
 
 
