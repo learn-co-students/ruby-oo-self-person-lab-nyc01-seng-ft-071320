@@ -55,6 +55,19 @@ class Person
         "Hi #{friend.name}! It's #{self.name}. How are you?"
     end
 
+    def start_conversation(personToStart, topic)
+        people = [self, personToStart]
+        if topic == 'politics'
+            people.each {|person| person.happiness -= 2}
+            "blah blah partisan blah lobbyist"
+        elsif topic == 'weather'
+            people.each {|person| person.happiness += 1}
+            "blah blah sun blah rain"
+        else
+            "blah blah blah blah blah"
+        end
+    end
+
 end
 
 person1 = Person.new("Ian")
