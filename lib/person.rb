@@ -2,14 +2,16 @@
 require "pry"
 
 class Person
+    
+    attr_accessor :bank_account, :hygiene, :happiness
+    attr_reader :name
+    
     def initialize(name)
         @name = name
         @bank_account = 25
         @happy_points = 8
         @hygiene_points = 8
     end
-
-    attr_accessor :bank_account
 
     def name
         @name
@@ -62,16 +64,30 @@ class Person
     end
 
     def work_out
-        self.hygiene =(@hygiene_points -3)
-        self.happiness =(@happy_points +2)
+        self.hygiene -= 3
+        self.happiness += 2
         "♪ another one bites the dust ♫"
     end
 
     def call_friend(friend)
-        self.happiness =(@happy_points +3)
-        friend.happiness =(@happy_points +3)
+        self.happiness +=3
+        friend.happiness +=3
         #binding.pry
-        "Hi Penelope! It's Felix. How are you?"
+        "Hi #{friend.name}! It's #{self.name}. How are you?"
+    end
+
+    def start_conversation(friend, topic)
+        if topic == "politics"
+            self.happiness -=2
+            friend.happiness -=2
+            "blah blah partisan blah lobbyist"
+        elsif topic == "weather"
+            self.happiness +=1
+            friend.happiness +=1
+            "blah blah sun blah rain"
+        else
+            "blah blah blah blah blah"
+        end
     end
 
 
