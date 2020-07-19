@@ -93,31 +93,3 @@ end
 end
 
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#     attr_accessor :bank_account
-# attr_accessor :happiness
-#     def initialize(name)
-#         @bank_account = 25
-#         @happiness = 8
-#         @name = name
-
-#     end
-
-#     def name
-#         @name
-#     end
-
-# end
